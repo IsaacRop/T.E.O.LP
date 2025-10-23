@@ -37,7 +37,7 @@ src="https://www.facebook.com/tr?id=1229355285899844&ev=PageView&noscript=1"
         
         <img class="mockup-celular" src="https://via.placeholder.com/300x550" alt="Mockup do chat do TEO em um celular">
         
-        <a href="form.html">QUERO MEU PLANO DE APROVAÇÃO</a>
+        <a href="form.html" id="cta-assinar-agora">QUERO MEU PLANO DE APROVAÇÃO</a>
         <p class="cta-note">Garanta acesso grátis no lançamento.</p>
     </header>
 
@@ -97,13 +97,44 @@ src="https://www.facebook.com/tr?id=1229355285899844&ev=PageView&noscript=1"
             <h2>Sua Vaga na Universidade Está a um Clique de Distância.</h2>
             <p>Deixe a procrastinação pros seus concorrentes. Faça parte do grupo exclusivo de estudantes que terá acesso antecipado ao TEO e garanta acesso grátis no lançamento. O risco é zero.</p>
             <br>
-            <a href="form.html">QUERO MEU PLANO DE APROVAÇÃO</a>
+            <a href="form.html" id="cta-assinar-agora">QUERO MEU PLANO DE APROVAÇÃO</a>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 TEO. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+  // --- INÍCIO DO SCRIPT DA ARMADILHA ---
+
+  // 1. Defina o ID exato do seu botão de CTA aqui.
+  var idDoSeuBotao = 'cta-assinar-agora';
+
+  // 2. Encontra o botão na página
+  var botaoDeConversao = document.getElementById(idDoSeuBotao);
+
+  // 3. Verifica se o botão realmente existe antes de tentar usá-lo
+  if (botaoDeConversao) {
+    
+    // 4. Adiciona um "ouvinte" que espera pelo clique
+    botaoDeConversao.addEventListener('click', function() {
+      
+      // 5. Quando o clique acontece, dispara o evento 'Lead' para o Facebook
+      fbq('track', 'Lead');
+
+      // 6. (Opcional) Mostra no console do navegador que funcionou
+      console.log('Evento de LEAD disparado para o Pixel da Meta!');
+
+    }, false);
+
+  } else {
+    // 7. (Opcional) Avisa no console se o ID do botão estiver errado
+    console.error('ERRO DO PIXEL: O botão com o ID "' + idDoSeuBotao + '" não foi encontrado. O rastreamento de clique não vai funcionar.');
+  }
+
+  // --- FIM DO SCRIPT DA ARMADILHA ---
+</script>
 
 </body>
 </html>
