@@ -141,7 +141,7 @@ hr {
 }
 
 /* --- Botão de Ação (Call to Action) --- */
-a[href="form.html"] {
+a[href="form.html"], #cta-assinar-agora{
     display: block;
     position: relative;
     background: var(--background-color);
@@ -157,7 +157,7 @@ a[href="form.html"] {
     transition: color 0.3s;
 }
 
-a[href="form.html"]::before {
+a[href="form.html"], #cta-assinar-agora::before {
     content: '';
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
@@ -167,11 +167,11 @@ a[href="form.html"]::before {
     background: linear-gradient(to right, var(--accent-darker), var(--accent-color));
 }
 
-a[href="form.html"]:hover {
+a[href="form.html"], #cta-assinar-agora:hover {
     color: #ffffff;
 }
 
-a[href="form.html"]::after {
+a[href="form.html"], #cta-assinar-agora::after {
     content: '';
     position: absolute;
     top: 0; left: 0;
@@ -183,7 +183,7 @@ a[href="form.html"]::after {
     transition: opacity 0.3s;
 }
 
-a[href="form.html"]:hover::after {
+a[href="form.html"], #cta-assinar-agora :hover::after {
     opacity: 1;
 }
 
